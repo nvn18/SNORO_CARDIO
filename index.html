@@ -1,0 +1,152 @@
+#index2.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTRO</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap');
+
+    *
+    {
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:'algerian';
+    }
+    body
+    {
+        position:relative;
+        overflow:hidden;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        min-height:100vh;
+        background-image: linear-gradient( #A9F1DF,#FFBBBB);
+    }
+    .container
+    {
+        position:absolute;
+        width:100%;
+        height:100%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+    h2
+    {
+        color:azure;
+        text-align:center;
+        font-size:6vw;
+        line-height:0.6em;
+        z-index:1000;
+        font-weight:900;
+        border:2.5vw solid rgba(255,225,255,0.5);
+        border-radius: 25px;
+        box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+    }
+    h2:hover
+    {
+        border:2.5vw solid hsl(93, 54%, 62%);
+    }
+    h2 span
+    {
+        font-size:0.3em;
+        letter-spacing:0.8em;
+        font-weight:400;
+    }
+    .block
+    {
+        position: absolute;
+        width: 50px;
+        height: 100px;
+        background-image: linear-gradient(#A9F1DF,#FFBBBB,#fffd87);
+        box-shadow: 10px 10px 50px rgba(0,0,0,0.2);
+    }   
+    .redirect-button {
+        cursor: pointer;
+        z-index:1000;
+        text-decoration: none;
+        color: azure;
+        font-size: 25px;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
+        padding: 10px 20px;
+        background-color: aqua;
+        margin-top:290px;
+        margin-right:50px;
+    }
+    .redirect-button:hover
+    {
+        background-color:#A9F1DF;
+        
+    }
+    @media screen and (max-width: 600px) {
+	
+	h2 {
+		font-size: 8vw;
+		border-width: 4vw;
+	}
+
+	.redirect-button {
+		font-size: 6vw;
+		padding: 2vw 4vw;
+		margin-top: 4vw;
+		margin-right: 4vw;
+	}
+
+	.block {
+		width: 4vw;
+		height: 8vw;
+		box-shadow: 0.4vw 0.4vw 2vw rgba(0, 0, 0, 0.2);
+	}
+}
+
+</style>
+<body>
+    <div class="container">
+        <h2><span>WELCOME TO</span><br>AI ALCHEMISTS</h2><br>
+        
+    </div>
+    <a class="redirect-button" onclick="redirect()">START</a>
+    <script src="anime.min.js"></script>
+    <script>
+        function redirect() {
+            setTimeout(function () {
+                window.location.href = "index2.html";
+            }, 600); 
+        }
+        
+        const container = document.querySelector('.container')
+        for (var i = 0;i <= 100;i++){
+            const blocks = document.createElement('div');
+            blocks.classList.add('block');
+            container.appendChild(blocks);
+        }
+
+        function moveblock(){
+            anime({
+                targets: '.block',
+                translateX:function(){
+                    return anime.random(-700,700);
+                },
+                translateY:function(){
+                    return anime.random(-500,500);
+                },
+                scale:function(){
+                    return anime.random(1,5);
+                },
+
+                easing: 'linear',
+                duration: 3000,
+                delay: anime.stagger(10),
+                complete: moveblock,
+            })
+        }
+        moveblock()
+    </script>
+</body>
+</html>

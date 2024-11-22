@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    font-weight: 200;
+    background-color: #fff0fe;
+    background-image: url('sleep1.webp');
+    background-size: cover;
+    color: #333333;
+    text-align: center;
+    padding: 50px;
+    transition: background-color 0.3s ease; 
+}
+
+.container {
+    text-align: center;
+    background-color: lightgoldenrodyellow;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.container:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+input {
+    width: 40%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #009688;
+    border-radius: 7px;
+    transition: border-color 0.3s ease; 
+}
+
+input:focus {
+    border-color: #00796b; 
+    outline: none; 
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #009688;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+
+button:hover {
+    background-color: #00796b;
+    transform: scale(1.05);
+}
+
+#result {
+    margin-top: 20px;
+    font-weight: bold;
+    transition: opacity 0.5s ease; 
+}
