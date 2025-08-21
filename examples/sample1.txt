@@ -1,0 +1,5 @@
+Hello SNORO!
+This is a sample file.
+It contains multiple lines and repeated words.
+Hello world
+SNORO hello

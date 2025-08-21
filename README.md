@@ -1,1 +1,0 @@
-# SNORO_CARDIO

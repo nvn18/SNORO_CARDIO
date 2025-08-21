@@ -1,0 +1,11 @@
+logging:
+  level: INFO
+  file: logs/snoro.log
+
+performance:
+  threads: 1
+  batch_size: 1000
+
+input:
+  format: text
+  validation: true

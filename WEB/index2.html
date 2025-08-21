@@ -1,0 +1,134 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Loading</title>
+</head>
+
+<style>
+    *
+    {
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+        font-family: algerian;
+    }
+    body
+    {
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        min-height:100vh;
+        background: #121213;
+    }
+    .loader::before
+    {
+        content:'';
+        position:absolute;
+        top:0;
+        right:0;
+        width:2px;
+        height:100%;
+        background:#fffd87;
+        animation: linking 0.8s steps(3) infinite;
+    }
+    @keyframes linking
+    {
+        0%,75%
+        {
+            opacity:1;
+        }
+        76%,100%
+        {
+            opacity:0;
+        }
+    }
+    .loader
+    {
+        position:relative;
+        -webkit-box-reflect: below 2px linear-gradient(transparent , #0002);
+        display: none; 
+    }
+    .loader.active
+    {
+        display: block; 
+    }
+    .loader h2
+    {
+        position: relative;
+        color:#fffd87;
+        letter-spacing:5px;
+        font-size:4em;
+        animation:type 10s steps(11) infinite; 
+        overflow:hidden;
+    }
+    @keyframes type 
+    {
+        0%,90%,100%
+        {
+            width: 0;
+        }
+        30%,60%
+        {
+            width:386.94px;
+        }
+    }
+    .shift
+    {
+        background-color: rgba(255,255,255,0.1);
+        backdrop-filter: blur(15px);
+        box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+        border:5px soild rgba(255,255,255,0.5);
+        border-radius: 5px;
+    }
+    .shift:hover
+    {
+        background: #fffd87;
+    }
+    a
+    {
+        text-decoration:none;
+        font-size:50px;
+        color:#fffd87;
+        transition: opacity 2s;
+    }
+    a:hover
+    {
+        color:orange;
+    }
+</style>
+
+<body>
+    <div class="loader">
+        <h2>LOADING....</h2>
+    </div><br><br>
+    <div class="shift">
+        
+        <a href="#" onclick="startLoading()">ENTER</a>
+    </div>
+
+    <script>
+        function startLoading() {
+            var loader = document.querySelector('.loader');
+            var enterButton = document.querySelector('.shift a');
+
+            
+            loader.classList.add('active');
+            
+           
+            enterButton.style.opacity = 0;
+
+            
+            setTimeout(function () {
+               
+                window.location.href = "main.html";
+            }, 5000);
+        }
+    </script>
+</body>
+
+</html>
